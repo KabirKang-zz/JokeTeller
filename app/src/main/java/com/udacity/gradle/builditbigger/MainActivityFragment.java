@@ -1,19 +1,38 @@
 package com.udacity.gradle.builditbigger;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.kabirkang.jokes.Jokes;
+import com.kabirkang.joketellerlibrary.DisplayJokeActivity;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 
 /**
  * A placeholder fragment containing a simple view.
  */
 public class MainActivityFragment extends Fragment {
+
+    private static final String TAG = MainActivityFragment.class.getName();
+
+    @OnClick(R.id.show_joke)
+    public void tellJoke(View view) {
+        Intent i = new Intent(getActivity(), DisplayJokeActivity.class);
+        Jokes jokes = new Jokes();
+        i.putExtra(DisplayJokeActivity.JOKE_EXTRA, jokes.getJoke());
+        startActivity(i);
+    }
 
     public MainActivityFragment() {
     }
@@ -22,7 +41,7 @@ public class MainActivityFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_main, container, false);
-
+        ButterKnife.bind(this, root);
         AdView mAdView = (AdView) root.findViewById(R.id.adView);
         // Create an ad request. Check logcat output for the hashed device ID to
         // get test ads on a physical device. e.g.
