@@ -1,8 +1,10 @@
 package com.udacity.gradle.builditbigger;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +15,7 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.kabirkang.jokes.Jokes;
 import com.kabirkang.joketellerlibrary.DisplayJokeActivity;
+import com.udacity.gradle.builditbigger.data.GetJokeAsyncTask;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -28,10 +31,17 @@ public class MainActivityFragment extends Fragment {
 
     @OnClick(R.id.show_joke)
     public void tellJoke(View view) {
-        Intent i = new Intent(getActivity(), DisplayJokeActivity.class);
-        Jokes jokes = new Jokes();
-        i.putExtra(DisplayJokeActivity.JOKE_EXTRA, jokes.getJoke());
-        startActivity(i);
+        final AsyncTask<GetJokeAsyncTask.JokeCallback, Void, String> getJokeTask = new GetJokeAsyncTask();
+        getJokeTask.execute(new GetJokeAsyncTask.JokeCallback() {
+            @Override
+            public void done(String result) {
+                Log.d(TAG, result);
+                Intent i = new Intent(getActivity(), DisplayJokeActivity.class);
+                i.putExtra(DisplayJokeActivity.JOKE_EXTRA, result);
+                startActivity(i);
+            }
+        });
+
     }
 
     public MainActivityFragment() {
