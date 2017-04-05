@@ -1,7 +1,7 @@
 package com.kabirkang.backend;
 
 /**
- * The object model for the data we are sending through endpoints
+ * The object model for the com.kabirkang.joketeller.data we are sending through endpoints
  */
 public class MyBean {
 
