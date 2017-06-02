@@ -1,4 +1,4 @@
-package com.kabirkang.joketeller;
+package com.kabirkang.joketeller.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 import com.kabirkang.jokes.Jokes;
 import com.kabirkang.joketeller.R;
+import com.kabirkang.joketeller.paid.fragment.MainFragment;
+import com.kabirkang.joketeller.free.fragment.MainFragment;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +19,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (savedInstanceState == null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.container, new MainFragment())
+                    .commit();
+        }
     }
 
 
