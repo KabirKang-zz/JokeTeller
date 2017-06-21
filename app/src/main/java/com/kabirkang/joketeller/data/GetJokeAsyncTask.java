@@ -1,6 +1,7 @@
 package com.kabirkang.joketeller.data;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
@@ -15,13 +16,16 @@ import java.io.IOException;
  */
 
 public class GetJokeAsyncTask extends AsyncTask<GetJokeAsyncTask.JokeCallback, Void, String> {
+    private static final String TAG = GetJokeAsyncTask.class.getName();
     private MyApi myApiService = null;
     private JokeCallback callback;
     @Override
     protected String doInBackground(JokeCallback... params) {
+        Log.d(TAG, "Tell Joke");
+
         if (myApiService == null) {
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(), new AndroidJsonFactory(), null)
-                    .setRootUrl("http://10.0.2.2:8080/_ah/api/")
+                    .setRootUrl("http://192.168.1.217:8080/_ah/api/")
                     .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
                         @Override
                         public void initialize(AbstractGoogleClientRequest<?> request) throws IOException {

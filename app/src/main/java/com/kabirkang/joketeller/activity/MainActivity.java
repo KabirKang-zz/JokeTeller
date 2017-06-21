@@ -2,6 +2,7 @@ package com.kabirkang.joketeller.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -9,23 +10,16 @@ import android.widget.Toast;
 
 import com.kabirkang.jokes.Jokes;
 import com.kabirkang.joketeller.R;
-import com.kabirkang.joketeller.paid.fragment.MainFragment;
-import com.kabirkang.joketeller.free.fragment.MainFragment;
-
 
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = MainActivity.class.getName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d(TAG, "onCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        if (savedInstanceState == null) {
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.container, new MainFragment())
-                    .commit();
-        }
+        Log.d(TAG, "content view set");
     }
 
 

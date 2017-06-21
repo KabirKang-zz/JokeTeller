@@ -25,6 +25,7 @@ public class MainFragment extends Fragment {
 
     @OnClick(R.id.show_joke)
     public void tellJoke(View view) {
+        Log.d(TAG, "Tell Joke");
         final AsyncTask<GetJokeAsyncTask.JokeCallback, Void, String> getJokeTask = new GetJokeAsyncTask();
         getJokeTask.execute(new GetJokeAsyncTask.JokeCallback() {
             @Override
