@@ -43,7 +43,6 @@ dependencies {
     androidTestCompile 'com.android.support.test:runner:0.5'
     androidTestCompile 'com.android.support.test:rules:0.5'
     compile project(':joketellerlibrary')
-    compile project(':jokesLibrary')
     compile project(path: ':backend', configuration: 'android-endpoints')
 
     compile 'com.android.support:appcompat-v7:25.3.1'
