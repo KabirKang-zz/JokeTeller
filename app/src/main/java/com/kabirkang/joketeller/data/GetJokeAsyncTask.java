@@ -25,7 +25,7 @@ public class GetJokeAsyncTask extends AsyncTask<GetJokeAsyncTask.JokeCallback, V
 
         if (myApiService == null) {
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(), new AndroidJsonFactory(), null)
-                    .setRootUrl("http://192.168.1.217:8080/_ah/api/")
+                    .setRootUrl("https://joketeller-172300.appspot.com/_ah/api/")
                     .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
                         @Override
                         public void initialize(AbstractGoogleClientRequest<?> request) throws IOException {
