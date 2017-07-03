@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/kabirkang/JokeTeller/jokelibrary/build/intermediates/res/merged/androidTest/debug/layout-v21/notification_action.xml",
+        "source": "/Users/kabirkang/.android/build-cache/111d7c439850cba2236cb252e1deca4fae7d97d1/output/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/Users/kabirkang/JokeTeller/jokelibrary/build/intermediates/res/merged/androidTest/debug/layout-v21/notification_action_tombstone.xml",
+        "source": "/Users/kabirkang/.android/build-cache/111d7c439850cba2236cb252e1deca4fae7d97d1/output/res/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/Users/kabirkang/JokeTeller/jokelibrary/build/intermediates/res/merged/androidTest/debug/layout-v21/notification_template_icon_group.xml",
+        "source": "/Users/kabirkang/.android/build-cache/111d7c439850cba2236cb252e1deca4fae7d97d1/output/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/Users/kabirkang/JokeTeller/jokelibrary/build/intermediates/res/merged/androidTest/debug/layout-v21/notification_template_custom_big.xml",
+        "source": "/Users/kabirkang/.android/build-cache/111d7c439850cba2236cb252e1deca4fae7d97d1/output/res/layout-v21/notification_template_custom_big.xml"
+    }
+]
